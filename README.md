@@ -1,75 +1,93 @@
-# React + TypeScript + Vite
+# 📋 Multi-Step Form (Formulário de Avaliação)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Formulário de avaliação de produto dividido em etapas. O usuário informa seus dados, dá uma nota de satisfação com um comentário e, antes de enviar, confere um resumo da avaliação.
 
-Currently, two official plugins are available:
+Desenvolvido com **React**, **TypeScript** e **Vite**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Funcionalidades
 
-## React Compiler
+- **Formulário em 3 etapas**: *Identificação*, *Avaliação* e *Envio*.
+- **Indicador de progresso** no topo, com ícones, que mostra em qual etapa o usuário está.
+- **Etapa de identificação** com os campos *Nome* e *E-mail*.
+- **Etapa de avaliação** com 4 níveis de satisfação representados por emojis (*Insatisfeito*, *Poderia ser melhor*, *Satisfeito* e *Muito satisfeito*) e um campo de **comentário**.
+- **Etapa de envio** com a mensagem "Falta pouco..." e um **resumo da avaliação** (nome, satisfação e comentário) antes de concluir.
+- **Navegação entre etapas** com os botões **Voltar** e **Avançar**; na última etapa o botão vira **Enviar**.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🎬 Demonstração
 
-## Expanding the ESLint configuration
+https://github.com/user-attachments/assets/bd3ccc68-dbe2-4f70-a1ea-644253941ec1
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tecnologias
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **[React 19](https://react.dev/)** — construção da interface
+- **[TypeScript](https://www.typescriptlang.org/)** — tipagem estática
+- **[Vite](https://vite.dev/)** — ambiente de desenvolvimento e build
+- **[React Icons](https://react-icons.github.io/react-icons/)** — ícones da interface
+- **[ESLint](https://eslint.org/)** — padronização e qualidade do código
+- **CSS** — estilização
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📁 Estrutura do projeto
 
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+Multi-Step-Form/
+├── public/              # Arquivos estáticos
+├── src/                 # Código-fonte da aplicação (React + TypeScript)
+├── index.html           # Página HTML principal
+├── vite.config.ts       # Configuração do Vite
+├── eslint.config.js     # Configuração do ESLint
+├── tsconfig.json        # Configuração do TypeScript
+└── package.json         # Dependências e scripts
 ```
+
+## 🚀 Como executar
+
+**Pré-requisito:** [Node.js](https://nodejs.org/) (versão LTS recente) e npm.
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/jotapefp/Multi-Step-Form.git
+   ```
+
+2. Entre na pasta do projeto:
+
+   ```bash
+   cd Multi-Step-Form
+   ```
+
+3. Instale as dependências:
+
+   ```bash
+   npm install
+   ```
+
+4. Inicie o servidor de desenvolvimento:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Abra o endereço exibido no terminal (geralmente `http://localhost:5173`).
+
+### Outros scripts
+
+| Comando           | Descrição                                          |
+| ----------------- | -------------------------------------------------- |
+| `npm run dev`     | Inicia o servidor de desenvolvimento               |
+| `npm run build`   | Verifica os tipos e gera a versão de produção      |
+| `npm run preview` | Visualiza localmente a versão de produção          |
+| `npm run lint`    | Verifica o código com o ESLint                     |
+
+## 🧭 Como usar
+
+1. Na etapa **Identificação**, preencha seu **nome** e **e-mail** e clique em **Avançar**.
+2. Na etapa **Avaliação**, escolha o emoji que representa sua satisfação com o produto e escreva um **comentário**.
+3. Clique em **Avançar** para ver o **resumo** da sua avaliação.
+4. Se quiser corrigir algo, use **Voltar**; se estiver tudo certo, clique em **Enviar**.
+
+## 👤 Autor
+
+**João Paulo Pinheiro Ferraz de Arruda**
+
+- GitHub: [@jotapefp](https://github.com/jotapefp)
+- LinkedIn: [joao-paulo-pinheiro-ferraz-de-arruda](https://www.linkedin.com/in/joao-paulo-pinheiro-ferraz-de-arruda)
